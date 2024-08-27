@@ -13,6 +13,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
 #define BASE 0
@@ -36,9 +37,26 @@
             key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
-    };
 
-    macros {
+        two {
+            bindings = <&kt NUMBER_2>;
+            key-positions = <0 32>;
+        };
+
+        three {
+            bindings = <&kp NUMBER_3>;
+            key-positions = <0 33>;
+        };
+
+        four {
+            bindings = <&kp NUMBER_4>;
+            key-positions = <0 34>;
+        };
+
+        game-layer {
+            bindings = <&tog 4>;
+            key-positions = <11 12 13>;
+        };
     };
 
     keymap {
@@ -145,6 +163,15 @@
         &bootloader  &bt BT_NXT  &trans        &trans  &trans    &trans  &kp F4  &kp F5  &kp F6  &kp F11
 &trans  &trans       &bt BT_PRV  &trans        &trans  &trans    &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans
                                  &trans        &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+           &kp N1     &kp Q  &kp W    &kp E     &kp R        &trans  &trans  &trans  &trans  &trans
+           &kp LCTRL  &kp A  &kp S    &kp D     &kp F        &trans  &trans  &trans  &trans  &trans
+&kp GRAVE  &kp LSHFT  &kp Z  &kp X    &kp C     &kp V        &trans  &trans  &trans  &trans  &trans  &trans
+                             &kp TAB  &kp LALT  &kp SPACE    &trans  &trans  &trans
             >;
         };
     };
